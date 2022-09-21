@@ -12,7 +12,7 @@
 
 */
 
-let shapes = {
+const shapes = {
   triangle: 3,
   square: 4,
   pentagon: 5,
@@ -21,9 +21,13 @@ let shapes = {
   megagon: 1000000,
 };
 
-let shapesWithMoreThanFiveSides = [];
+const shapesWithMoreThanFiveSides = [];
 
-// WRITE YOUR CODE BELOW THIS LINE
+for (const shape in shapes) {
+	if (shapes[shape] >= 5) {
+		shapesWithMoreThanFiveSides.push(shape);
+	}
+}
 
 // DO NOT EDIT BELOW THIS LINE
 console.log(

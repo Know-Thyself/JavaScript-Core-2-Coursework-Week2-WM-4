@@ -8,17 +8,16 @@
 
 */
 
-let myPets = {
+const myPets = {
   dog: "Rufus",
   cat: "Mr Fluffykins",
   tortoise: "Lord Voldetort",
   rabbit: "Bugs",
 };
 
-let petNames =
-  /* todo */
+const petNames = JSON.stringify(Object.values(myPets));
 
-  // DO NOT EDIT BELOW THIS LINE
-  console.log(
-    `Expected result: ["Rufus", "Mr Fluffykins", "Lord Voldetort", "Bugs"]. Actual result: ${petNames}`
-  );
+// DO NOT EDIT BELOW THIS LINE
+console.log(
+  `Expected result: ["Rufus", "Mr Fluffykins", "Lord Voldetort", "Bugs"]. Actual result: ${petNames}`
+);

@@ -6,18 +6,20 @@
 
 */
 
-
-let person = {
-    name: "Maggie",
-    age: 26,
-    currentAddress: "London",
-    changeAddress: /* todo */
+const person = {
+  name: "Maggie",
+  age: 26,
+  currentAddress: "London",
+  changeAddress(address) {
+    this.currentAddress = address;
+  },
 };
-
 
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */
 
 person.changeAddress("Edinburgh");
-console.log(`Expected result: Edinburgh. Actual result: ${person.currentAddress}`);
+console.log(
+  `Expected result: Edinburgh. Actual result: ${person.currentAddress}`
+);
