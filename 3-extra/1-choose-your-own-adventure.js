@@ -36,33 +36,15 @@ To enable the tests for the stretch goals, remove the ".skip" on the appropriate
 
 let game = {
   currentRoom: null,
-  start: function (roomName) {
-    // This function is called with the name of the room that the player wants
-    // to start in.
-    // Finish the function so that the currentRoom property is set to the room
-    // object for the correct room.
-    //
-    // Hint: the only valid rooms are "hall", "classroom" and "library".
-    if (
-      roomName === "hall" ||
-      roomName === "classroom" ||
-      roomName === "library"
-    )
-      this.currentRoom = { name: roomName };
+  start(roomName) {
+    const roomNames = ["hall", "classroom", "library"];
+    if (roomNames.includes(roomName)) this.currentRoom = { name: roomName };
   },
 
-  move: function (direction) {
-    // This function is called with the direction that the player wants to move.
-    // Finish the function so that the currentRoom property is updated with new
-    // room in the direction that the player wants to move in.
-    //
-    // Hint: the room objects have north/east/south/west methods which return
-    // a new room object that is in the relevant direction.
+  move(direction) {
+    const directions = ["north", "east", "south", "west"];
     if (
-      (direction === "north" ||
-        direction === "east" ||
-        direction === "south" ||
-        direction === "west") &&
+      directions.includes(direction) &&
       rooms[this.currentRoom.name][direction]() !== null
     )
       this.currentRoom = {
