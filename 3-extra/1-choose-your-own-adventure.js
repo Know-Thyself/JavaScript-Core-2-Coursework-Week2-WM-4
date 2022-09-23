@@ -40,16 +40,18 @@ let game = {
     const roomNames = ["hall", "classroom", "library"];
     if (roomNames.includes(roomName)) this.currentRoom = { name: roomName };
   },
-
   move(direction) {
     const directions = ["north", "east", "south", "west"];
     if (
       directions.includes(direction) &&
       rooms[this.currentRoom.name][direction]() !== null
-    )
+    ) {
+      const roomToMoveFrom = this.currentRoom.name;
+      const roomToMoveTo = rooms[roomToMoveFrom][direction]();
       this.currentRoom = {
-        name: rooms[this.currentRoom.name][direction]().name,
+        name: roomToMoveTo.name,
       };
+    }
   },
 };
 
